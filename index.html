@@ -46,6 +46,7 @@
     font-size: var(--fz-lg);
     line-height: 1.3;
     -webkit-font-smoothing: antialiased;
+    font-size: 1.2em;
   }
 
   ::selection { background: var(--green); color: var(--navy); }
@@ -56,13 +57,16 @@
   /* ── LAYOUT ── */
   .container {
     display: flex;
+    justify-content: center;
     min-height: 100vh;
+    position: relative;
   }
 
   /* ── LEFT PANEL (sticky) ── */
   .left-panel {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: calc(50% - 456px - var(--nav-width) - 40px);
     height: 100vh;
     width: var(--nav-width);
     min-width: var(--nav-width);
@@ -187,9 +191,9 @@
 
   /* ── RIGHT PANEL (scrollable) ── */
   .right-panel {
-    flex: 1;
+    flex: 0 0 912px;
     padding: 80px 60px 80px 80px;
-    max-width: 760px;
+    max-width: 912px;
   }
 
   section {
@@ -223,8 +227,8 @@
     color: var(--slate);
     font-size: var(--fz-md);
     line-height: 1.7;
-    margin-bottom: 16px;
-    max-width: 580px;
+    margin: 0 auto 16px;
+    max-width: 100%;
   }
 
   #about p strong {
@@ -242,6 +246,7 @@
     transition: var(--transition);
     position: relative;
     border: 1px solid transparent;
+    cursor: pointer;
   }
 
   .project-card:hover {
@@ -330,6 +335,78 @@
     padding: 4px 10px;
     border-radius: 2px;
     letter-spacing: 0.05em;
+  }
+
+  .project-extended {
+    display: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(100,255,218,0.1);
+    color: var(--slate);
+    line-height: 1.6;
+  }
+
+  .project-extended aside {
+    font-style: italic;
+    color: var(--green);
+    margin-bottom: 16px;
+  }
+
+  .project-extended h3 {
+    font-size: var(--fz-lg);
+    color: var(--slate-white);
+    margin: 20px 0 10px 0;
+  }
+
+  .project-extended p {
+    margin-bottom: 16px;
+  }
+
+  .project-extended ol, .project-extended ul {
+    margin-bottom: 16px;
+    padding-left: 20px;
+  }
+
+  .loom-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .loom-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .project-image-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .project-image-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(100,255,218,0.1);
+    transition: var(--transition);
+  }
+
+  .project-image-gallery img:hover {
+    transform: scale(1.02);
+    border-color: rgba(100,255,218,0.3);
+  }
+
+  .project-card.expanded .project-extended {
+    display: block;
   }
 
   /* ── EXPERIENCE ── */
@@ -476,7 +553,9 @@
   }
 
   .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 16px 28px;
     border: 1px solid var(--green);
     border-radius: var(--border-radius);
@@ -488,6 +567,12 @@
     background: transparent;
     cursor: pointer;
     text-decoration: none;
+  }
+
+  .btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
   }
 
   .btn:hover {
@@ -536,7 +621,7 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 1080px) {
-    .left-panel { width: 200px; min-width: 200px; padding: 60px 28px; }
+    .left-panel { position: relative; left: auto; width: 200px; min-width: 200px; padding: 60px 28px; }
     .right-panel { padding: 60px 40px 60px 60px; }
   }
 
@@ -603,12 +688,12 @@
       <a class="social-link" href="https://www.linkedin.com/in/maksym-lysogora-6a021583/" target="_blank" title="LinkedIn">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
       </a>
-      <!-- Twitter/X -->
-      <a class="social-link" href="https://x.com/ParabolaHuman" target="_blank" title="X / Twitter">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.754l7.737-8.867L1.878 2.25H8.08l4.253 5.621zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      <!-- Phone -->
+      <a class="social-link" href="tel:+380950474011" title="Phone">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.72 11.72 0 003.64.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.58 3.64 1 1 0 01-.21 1.11l-2.25 2.25z"/></svg>
       </a>
       <!-- Email -->
-      <a class="social-link" href="mailto:maxim.lisogora@gmail.com" title="Email">
+      <a class="social-link" href="mailto:maksymlysogora@gmail.com" title="Email">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.9.732-1.636 1.636-1.636h.749L12 10.91l9.615-7.089h.749A1.636 1.636 0 0124 5.457z"/></svg>
       </a>
     </div>
@@ -644,12 +729,6 @@
         <div class="project-top">
           <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
           <div class="project-links">
-            <a href="https://youtu.be/hyPksUGFr4U" target="_blank" title="Demo video">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a href="https://x.com/ParabolaHuman" target="_blank" title="Live on Twitter">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.754l7.737-8.867L1.878 2.25H8.08l4.253 5.621zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
           </div>
         </div>
         <span class="project-badge">Live</span>
@@ -665,6 +744,39 @@
           <li>Tweepy</li>
           <li>JSON</li>
         </ul>
+        <div class="project-extended">
+          <div class="loom-container">
+            <iframe src="https://www.loom.com/embed/9dfd2c4c13c34a66a4b36dc5c4fee949" allowfullscreen></iframe>
+          </div>
+          <aside>
+            🤖 AI content automation system with multi-step decision pipeline
+          </aside>
+          <p><strong>Stack:</strong> Python · OpenAI API (GPT-4o-mini) · Telegram Bot API · Twitter API v2 · Tweepy · python-dotenv</p>
+          <hr style="border: none; border-top: 1px solid rgba(100,255,218,0.1); margin: 20px 0;">
+          <h3>Problem - Solution</h3>
+          <p>Writing quality Twitter threads manually takes 30-60 min and requires constant context-switching. Instead of a simple single-prompt bot, I built a 6-step pipeline where each step has one responsibility - idea generation, LLM filtering, thread generation, self-scoring, user selection, and auto-publishing via API. Built modular: prompt in system_prompt.txt, secrets in .env, memory in memory.json.</p>
+          <h3>Pipeline</h3>
+          <ol>
+            <li>Idea generation - GPT-4o-mini generates 5 raw ideas</li>
+            <li>Selection - second LLM call picks 3 strongest ideas</li>
+            <li>Thread generation - 3 threads x 4-7 tweets as structured JSON</li>
+            <li>Self-scoring - LLM scores 1-10 and re-ranks by quality</li>
+            <li>User selects 1, 2, or 3 - or requests 3 new options</li>
+            <li>Auto-publish - Tweepy posts thread to Twitter via API v2 with retry logic</li>
+          </ol>
+          <h3>Results</h3>
+          <ul>
+            <li>Content creation time: 30-60 min → under 2 min</li>
+            <li>Live at @ParabolaHuman - 13 posts, 4 full threads published</li>
+            <li>Built in 3-4 weeks while learning Python and APIs from scratch</li>
+          </ul>
+          <div class="project-image-gallery">
+            <img src="media/image1.png" alt="Project screenshot 1">
+            <img src="media/image2.png" alt="Project screenshot 2">
+            <img src="media/image3.png" alt="Project screenshot 3">
+            <img src="media/image4.png" alt="Project screenshot 4">
+          </div>
+        </div>
       </div>
 
       <!-- Project 2 -->
@@ -721,7 +833,7 @@
       </div>
 
       <div class="exp-item fade-in">
-        <div class="exp-date">2022 -<br>2025</div>
+        <div class="exp-date">2024 -<br>2026</div>
         <div class="exp-right">
           <h3 class="exp-title">AI-Assisted Visual Producer</h3>
           <p class="exp-company">Freelance - Collaba Visual</p>
@@ -749,7 +861,20 @@
       </div>
 
       <div class="exp-item fade-in">
-        <div class="exp-date">2008 -<br>2022</div>
+        <div class="exp-date">2015 -<br>2017</div>
+        <div class="exp-right">
+          <h3 class="exp-title">Architect &amp; Urban Planner</h3>
+          <p class="exp-company">Zotov &amp; Co</p>
+          <ul class="exp-desc">
+            <li>Designed residential buildings and urban spaces with a focus on livability and context</li>
+            <li>Developed architectural and urban planning solutions for housing and public environments</li>
+            <li>Coordinated projects with design teams to align visuals, plans, and masterplan goals</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item fade-in">
+        <div class="exp-date">2012 -<br>2025</div>
         <div class="exp-right">
           <h3 class="exp-title">Architect &amp; Urban Designer</h3>
           <p class="exp-company">Leading firms across Ukraine</p>
@@ -834,13 +959,27 @@
         Open to AI Operator, Automation Builder, and AI Integration roles. Whether you have a project in mind or just want to connect - my inbox is open.
       </p>
       <div class="contact-links fade-in">
-        <a class="btn" href="mailto:maxim.lisogora@gmail.com">Say Hello</a>
-        <a class="btn" href="https://www.linkedin.com/in/maksym-lysogora-6a021583/" target="_blank">LinkedIn</a>
+        <a class="btn" href="mailto:maksymlysogora@gmail.com">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.9.732-1.636 1.636-1.636h.749L12 10.91l9.615-7.089h.749A1.636 1.636 0 0124 5.457z"/></svg>
+          Say Hello
+        </a>
+        <a class="btn" href="https://wa.me/380950474011" target="_blank">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+          WhatsApp
+        </a>
+        <a class="btn" href="https://t.me/lysogoramaksym" target="_blank">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Telegram
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/maksym-lysogora-6a021583/" target="_blank">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
       </div>
       <p class="contact-detail fade-in">
         <a href="tel:+380950474011">+380 95 047 4011</a>
         &nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="mailto:maxim.lisogora@gmail.com">maxim.lisogora@gmail.com</a>
+        <a href="mailto:maksymlysogora@gmail.com">maksymlysogora@gmail.com</a>
         &nbsp;&nbsp;|&nbsp;&nbsp;
         Kyiv, Ukraine
       </p>
@@ -890,6 +1029,17 @@ const fadeObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 
 fadeEls.forEach(el => fadeObserver.observe(el));
+
+// Project expand functionality
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    // Prevent toggle if clicking on links
+    if (e.target.tagName === 'A' || e.target.closest('a')) {
+      return;
+    }
+    card.classList.toggle('expanded');
+  });
+});
 </script>
 </body>
 </html>
