@@ -392,17 +392,24 @@
     margin-top: 20px;
   }
 
-  .project-image-gallery img {
+  .project-image-gallery img,
+  .project-diagram svg {
     width: 100%;
     height: auto;
     border-radius: var(--border-radius);
     border: 1px solid rgba(100,255,218,0.1);
     transition: var(--transition);
+    background: #0d1426;
   }
 
-  .project-image-gallery img:hover {
+  .project-image-gallery img:hover,
+  .project-diagram svg:hover {
     transform: scale(1.02);
     border-color: rgba(100,255,218,0.3);
+  }
+
+  .project-diagram {
+    margin-top: 20px;
   }
 
   .project-card.expanded .project-extended {
@@ -799,6 +806,110 @@
           <li>Veo 2</li>
           <li>Photoshop</li>
         </ul>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card fade-in">
+        <div class="project-top">
+          <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          <div class="project-links">
+            <a href="https://collabavisual.com" target="_blank" title="Live site">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 13v6H6V6h6V4H6a2 2 0 00-2 2v13a2 2 0 002 2h13a2 2 0 002-2v-7h-2z"/><path d="M15 3h6v6h-2V6.414l-9.293 9.293-1.414-1.414L17.586 5H15V3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <span class="project-badge">Live</span>
+        <h3 class="project-title"><a href="https://collabavisual.com" target="_blank">Collaba Visual</a></h3>
+        <p class="project-desc">
+          AI-directed website build for a paid domain on Netlify. HTML/CSS/JS generated with Gemini, refined through human-led prompting, QA, and deployment.
+        </p>
+        <ul class="tech-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Netlify</li>
+          <li>AI-directed development</li>
+        </ul>
+        <div class="project-extended">
+          <p><strong>Project:</strong> collabavisual.com, deployed to Netlify with a paid custom domain.</p>
+          <p><strong>Role:</strong> Design & UX, preloader, grid, animations, iterative screenshot-based prompting, QA, deploy.</p>
+          <p><strong>Work:</strong> ~40 hours of AI-assisted, human-directed development over one week.</p>
+          <div class="project-image-gallery">
+            <img src="media/project_2/image1.png" alt="collabavisual.com screenshot">
+          </div>
+          <div class="project-diagram">
+            <svg width="680" height="820" viewBox="0 0 680 820" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+              <rect width="680" height="820" fill="#ffffff"/>
+              <text x="340" y="32" text-anchor="middle" font-size="14" font-weight="500" fill="#1a1a1a">AI-directed development workflow</text>
+              <text x="340" y="52" text-anchor="middle" font-size="12" fill="#888">collabavisual.com — built with Gemini as code generator</text>
+              <text x="36" y="108" text-anchor="middle" font-size="11" fill="#aaa">Brief</text>
+              <text x="36" y="210" text-anchor="middle" font-size="11" fill="#aaa">Input</text>
+              <text x="36" y="318" text-anchor="middle" font-size="11" fill="#aaa">Design</text>
+              <text x="36" y="442" text-anchor="middle" font-size="11" fill="#aaa">Content</text>
+              <text x="36" y="560" text-anchor="middle" font-size="11" fill="#aaa">QA</text>
+              <text x="36" y="668" text-anchor="middle" font-size="11" fill="#aaa">Deploy</text>
+              <text x="36" y="762" text-anchor="middle" font-size="11" fill="#aaa">Live</text>
+              <line x1="64" y1="76" x2="64" y2="790" stroke="#ddd" stroke-width="0.5"/>
+              <defs>
+                <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M2 1L8 5L2 9" fill="none" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </marker>
+              </defs>
+              <rect x="190" y="80" width="300" height="56" rx="8" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+              <text x="340" y="103" text-anchor="middle" font-size="14" font-weight="500" fill="#3C3489" dominant-baseline="central">Define brief and site structure</text>
+              <text x="340" y="121" text-anchor="middle" font-size="12" fill="#534AB7" dominant-baseline="central">Services, sections, UX goals, target audience</text>
+              <line x1="340" y1="136" x2="340" y2="154" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <rect x="90" y="156" width="220" height="56" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+              <text x="200" y="179" text-anchor="middle" font-size="14" font-weight="500" fill="#085041" dominant-baseline="central">Reference screenshots</text>
+              <text x="200" y="197" text-anchor="middle" font-size="12" fill="#0F6E56" dominant-baseline="central">Sites with desired visual feel</text>
+              <rect x="370" y="156" width="220" height="56" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+              <text x="480" y="179" text-anchor="middle" font-size="14" font-weight="500" fill="#085041" dominant-baseline="central">Detailed prompt to Gemini</text>
+              <text x="480" y="197" text-anchor="middle" font-size="12" fill="#0F6E56" dominant-baseline="central">Structure, layout, fonts, tone</text>
+              <path d="M340 136 L340 146 L200 146 L200 156" fill="none" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <path d="M340 136 L340 146 L480 146 L480 156" fill="none" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <path d="M200 212 L200 242 L310 242 L310 268" fill="none" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <path d="M480 212 L480 242 L370 242 L370 268" fill="none" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <rect x="190" y="268" width="300" height="56" rx="8" fill="#FAECE7" stroke="#F0997B" stroke-width="0.5"/>
+              <text x="340" y="291" text-anchor="middle" font-size="14" font-weight="500" fill="#4A1B0C" dominant-baseline="central">Gemini generates HTML/CSS/JS</text>
+              <text x="340" y="309" text-anchor="middle" font-size="12" fill="#712B13" dominant-baseline="central">First version based on prompt and refs</text>
+              <line x1="340" y1="324" x2="340" y2="346" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <rect x="190" y="348" width="300" height="56" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+              <text x="340" y="371" text-anchor="middle" font-size="14" font-weight="500" fill="#2C2C2A" dominant-baseline="central">Review output in browser</text>
+              <text x="340" y="389" text-anchor="middle" font-size="12" fill="#5F5E5A" dominant-baseline="central">Screenshot issues, note what needs fixing</text>
+              <path d="M490 376 Q590 376 590 300 Q590 224 490 280" fill="none" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+              <text x="596" y="298" font-size="11" fill="#aaa">iterate</text>
+              <text x="596" y="312" font-size="11" fill="#aaa">40 hrs</text>
+              <line x1="340" y1="404" x2="340" y2="422" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <rect x="90" y="424" width="220" height="56" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+              <text x="200" y="447" text-anchor="middle" font-size="14" font-weight="500" fill="#085041" dominant-baseline="central">Add media and content</text>
+              <text x="200" y="465" text-anchor="middle" font-size="12" fill="#0F6E56" dominant-baseline="central">Photos, videos, project cases</text>
+              <rect x="370" y="424" width="220" height="56" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+              <text x="480" y="447" text-anchor="middle" font-size="14" font-weight="500" fill="#085041" dominant-baseline="central">Preloader and animations</text>
+              <text x="480" y="465" text-anchor="middle" font-size="12" fill="#0F6E56" dominant-baseline="central">Logo sequence, hover effects</text>
+              <path d="M340 404 L340 414 L200 414 L200 424" fill="none" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <path d="M340 404 L340 414 L480 414 L480 424" fill="none" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <path d="M200 480 L200 510 L310 510 L310 532" fill="none" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <path d="M480 480 L480 510 L370 510 L370 532" fill="none" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <rect x="190" y="532" width="300" height="56" rx="8" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+              <text x="340" y="555" text-anchor="middle" font-size="14" font-weight="500" fill="#412402" dominant-baseline="central">Mobile QA and layout fixes</text>
+              <text x="340" y="573" text-anchor="middle" font-size="12" fill="#633806" dominant-baseline="central">20+ bugs fixed via iterative prompting</text>
+              <line x1="340" y1="588" x2="340" y2="610" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <rect x="90" y="612" width="220" height="56" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+              <text x="200" y="635" text-anchor="middle" font-size="14" font-weight="500" fill="#2C2C2A" dominant-baseline="central">Deploy to Netlify</text>
+              <text x="200" y="653" text-anchor="middle" font-size="12" fill="#5F5E5A" dominant-baseline="central">CI/CD, HTTPS, production build</text>
+              <rect x="370" y="612" width="220" height="56" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+              <text x="480" y="635" text-anchor="middle" font-size="14" font-weight="500" fill="#2C2C2A" dominant-baseline="central">Custom domain</text>
+              <text x="480" y="653" text-anchor="middle" font-size="12" fill="#5F5E5A" dominant-baseline="central">collabavisual.com, DNS setup</text>
+              <path d="M340 588 L340 602 L200 602 L200 612" fill="none" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <path d="M340 588 L340 602 L480 602 L480 612" fill="none" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <path d="M200 668 L200 696 L310 696 L310 720" fill="none" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <path d="M480 668 L480 696 L370 696 L370 720" fill="none" stroke="#999" stroke-width="1" marker-end="url(#arr)"/>
+              <rect x="190" y="720" width="300" height="56" rx="8" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
+              <text x="340" y="743" text-anchor="middle" font-size="14" font-weight="500" fill="#04342C" dominant-baseline="central">Live production site</text>
+              <text x="340" y="761" text-anchor="middle" font-size="12" fill="#085041" dominant-baseline="central">453 requests / 24h. Real clients</text>
+            </svg>
+          </div>
+        </div>
       </div>
 
       <!-- Project 3 placeholder -->
