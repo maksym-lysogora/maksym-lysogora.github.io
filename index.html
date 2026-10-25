@@ -737,7 +737,7 @@
         My main project is <strong>Collaba Render</strong> - a node-based AI visualization platform I originally built for my own architectural visualization work. For roughly four months it has been my primary AI production environment on commercial projects. I am now developing it into a SaaS product for professional architects.
       </p>
       <p class="fade-in">
-        My path into AI engineering has been practical. I first built the Collaba Visual website with Gemini, then created a Python Twitter agent as a hands-on learning project to understand APIs, tokens, agent logic and code structure. Each project became a step toward building more complete products.
+        My path into AI products has been practical. I first built the Collaba Visual website with Gemini, then a Python agent that generates and publishes posts through the Twitter API. Today I own the product architecture, workflow design and testing, and implement with AI-assisted development in Codex and Claude Code.
       </p>
       <p class="fade-in">
         Currently focused on <strong>AI product development</strong>, <strong>node-based visual workflows</strong>, <strong>API integration</strong>, and controlled human-in-the-loop systems for image and video production.
@@ -776,7 +776,8 @@
         </ul>
         <div class="project-extended">
           <p><strong>Project:</strong> Production-tested AI product for controlled architectural image generation and editing.</p>
-          <p><strong>Role:</strong> Product concept, UI/UX direction, workflow architecture, prompt systems, AI-assisted frontend/backend implementation, API integration, testing, deployment, and continuous validation on commercial projects.</p>
+          <p><strong>Role:</strong> Product concept, UI/UX direction, workflow architecture, prompt systems, API integration, testing, deployment, and continuous validation on commercial projects.</p>
+          <p><strong>How it is built:</strong> I own the product architecture, workflow design and testing; the platform is implemented with AI-assisted development using Codex and Claude Code.</p>
           <p><strong>Evolution:</strong> Started as a local internal tool, became my main AI production environment for roughly four months, and is now being rebuilt as a SaaS platform for professional architects.</p>
           <p><strong>Core idea:</strong> Give architects a controllable node-based workspace where base renders, references, project context and generation models are combined visually instead of being hidden inside one long prompt.</p>
 
@@ -794,7 +795,7 @@
             <li>Context and prompt orchestration focused on geometry preservation, camera consistency, materials, environment and project continuity.</li>
             <li>Backend integrations with OpenAI and Google image models through APIs.</li>
             <li>User account and authentication infrastructure with Supabase.</li>
-            <li>Cloud deployment through Railway, with the product repository and version control in GitHub.</li>
+            <li>Cloud deployment through Railway, with source code managed on GitHub and an automated test suite.</li>
             <li>Project library with folders, generation history, a first-run tour and a start window with templates.</li>
             <li>Ongoing UI/UX redesign and productization; already used by a few external professional users.</li>
           </ul>
@@ -847,7 +848,7 @@
         <span class="project-badge">Live</span>
         <h3 class="project-title">AI Twitter Content Agent</h3>
         <p class="project-desc">
-          Hands-on AI engineering learning project built to understand Python, APIs, tokens and agent architecture by coding a working system instead of using n8n or Make. Started with Gemini and later moved to Claude Code while actively reviewing, editing and testing the code myself.
+          Python agent with a Telegram interface that generates, reviews and publishes posts through the Twitter API. Built in code rather than with n8n or Make, using AI-assisted development with Gemini and Claude Code; the workflow was tested and refined iteratively.
         </p>
         <ul class="tech-list">
           <li>Python</li>
@@ -871,13 +872,10 @@
               style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:8px;background:#0d1426;"
             ></video>
           </div>
-          <aside>
-            Practical learning project for AI engineering fundamentals
-          </aside>
-          <p><strong>Stack:</strong> Python &middot; OpenAI API (GPT-4o-mini) &middot; Telegram Bot API &middot; Twitter API v2 &middot; Tweepy &middot; Gemini &middot; Claude Code &middot; python-dotenv</p>
+                    <p><strong>Stack:</strong> Python &middot; OpenAI API (GPT-4o-mini) &middot; Telegram Bot API &middot; Twitter API v2 &middot; Tweepy &middot; Gemini &middot; Claude Code &middot; python-dotenv</p>
           <hr style="border: none; border-top: 1px solid rgba(100,255,218,0.1); margin: 20px 0;">
           <h3>Why I built it</h3>
-          <p>The goal was not to create a sophisticated social-media product. I wanted a practical project that forced me to learn how APIs, tokens, environment variables, Python modules and multi-step LLM logic work. I deliberately avoided no-code tools, asked the coding assistants to explain the code, and manually reviewed or replaced blocks while learning the underlying concepts.</p>
+          <p>To cut thread creation from 30-60 minutes to a couple of minutes while keeping a human approval step: the model drafts and ranks options, I choose, and publishing runs automatically.</p>
           <h3>Pipeline</h3>
           <ol>
             <li>Idea generation - GPT-4o-mini generates 5 raw ideas</li>
@@ -891,7 +889,7 @@
           <ul>
             <li>Content creation time: 30-60 min &rarr; under 2 min</li>
             <li>Live at @ParabolaHuman - 13 posts, 4 full threads published</li>
-            <li>Built in 3-4 weeks while learning Python and APIs from scratch</li>
+            <li>Built in 3-4 weeks</li>
           </ul>
           <div class="project-image-gallery">
             <img src="image1.png" alt="Project screenshot 1">
@@ -1121,11 +1119,11 @@
           <h3 class="exp-title">Founder &amp; Lead Architect</h3>
           <p class="exp-company">Collaba Architects</p>
           <ul class="exp-desc">
-            <li>Established and ran a boutique architectural studio</li>
+            <li>Established and ran a boutique architectural studio with co-founder Oleksandr Nochovnyi</li>
             <li>Owned business operations, hiring, client relations, and project delivery</li>
             <li>Led large-scale urban planning and residential projects for clients in Ukraine and abroad</li>
             <li>Developed internal digital standards and automated documentation processes across concurrent projects</li>
-            <li>Studio portfolio: 90+ projects in 3 countries, together with co-founder Oleksandr Nochovnyi; studio relaunched in 2026</li>
+            <li>Studio portfolio: 90+ projects across three countries since 2017. Studio relaunched in 2026; researching AI-assisted Archicad workflows (Tapir, MCP) for model changes and documentation updates</li>
           </ul>
         </div>
       </div>
@@ -1191,7 +1189,8 @@
           <ul>
             <li>Google AI Studio</li>
             <li>OpenAI Images</li>
-            <li>Gemini Image</li>
+            <li>Gemini Image / Nano Banana</li>
+            <li>FLUX</li>
             <li>Kling AI</li>
             <li>Veo</li>
             <li>Stable Diffusion</li>
@@ -1212,6 +1211,7 @@
             <li>GitHub</li>
             <li>HTML / CSS</li>
             <li>Python - basic</li>
+            <li>Electron</li>
             <li>JSON</li>
           </ul>
         </div>
@@ -1226,6 +1226,8 @@
             <li>Client Consulting</li>
             <li>Blender</li>
             <li>Photoshop</li>
+            <li>Archicad</li>
+            <li>Urban Master Planning</li>
           </ul>
         </div>
       </div>
