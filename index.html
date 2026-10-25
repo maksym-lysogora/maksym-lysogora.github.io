@@ -235,6 +235,18 @@
     color: var(--slate-white);
   }
 
+  /* HOW I WORK WITH AI */
+  #ai-workflow p,
+  #ai-workflow li {
+    color: var(--slate);
+    font-size: var(--fz-md);
+    line-height: 1.7;
+  }
+  #ai-workflow p { margin: 0 0 16px; }
+  #ai-workflow ul { list-style: none; margin: 0 0 16px; }
+  #ai-workflow li { margin-bottom: 12px; }
+  #ai-workflow strong { color: var(--slate-white); }
+
   /* PROJECTS */
   .project-card {
     display: grid;
@@ -688,6 +700,10 @@
           <span class="nav-line"></span>
           Projects
         </a>
+        <a class="nav-item" href="#ai-workflow">
+          <span class="nav-line"></span>
+          AI Workflow
+        </a>
         <a class="nav-item" href="#experience">
           <span class="nav-line"></span>
           Experience
@@ -1091,6 +1107,23 @@
         </div>
       </div>
 
+    </section>
+
+    <!-- HOW I WORK WITH AI -->
+    <section id="ai-workflow">
+      <h2 class="section-heading">How I work with AI</h2>
+
+      <p class="fade-in">
+        I use ChatGPT, Codex and Claude Code for research, prototyping and implementation. I define the problem, the product logic, the constraints and what counts as done; much of the code is written with AI. I check results in my own production work and turn repeated mistakes into rules and checks.
+      </p>
+      <ul class="fade-in">
+        <li><strong>Rules first.</strong> Each project has an instruction file for agents (AGENTS.md / CLAUDE.md): language, scope, and what needs my approval: publishing, sending, spending, deploys.</li>
+        <li><strong>Files as long-term memory.</strong> Status logs, project briefs, a code map, patch notes and short handoff documents carry context between sessions and tools, instead of one endless chat.</li>
+        <li><strong>Small, defined blocks.</strong> Requests are first written down as requirements with acceptance criteria; implementation starts only on a clear go, scoped to a result, files and a check.</li>
+        <li><strong>Several assistants, one workspace.</strong> ChatGPT for research, positioning and prompts; Codex and Claude Code for files and code. Codex and Claude Code share one git folder with a sync protocol, signed commits and a handoff log.</li>
+        <li><strong>Reusable skills.</strong> Custom Codex skills for recurring work: Collaba Render prompts and production insights, Blender modeling, limits on token use and agent loops, splitting tasks between models.</li>
+        <li><strong>Learning from failures.</strong> Lost presets, secrets in code, edits in the wrong file and runaway token use each became a written rule.</li>
+      </ul>
     </section>
 
     <!-- EXPERIENCE -->
