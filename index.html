@@ -1015,9 +1015,14 @@
       <div class="project-card fade-in">
         <div class="project-top">
           <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          <div class="project-links">
+            <a href="https://github.com/maksym-lysogora/collaba-projects" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+          </div>
         </div>
         <span class="project-badge">Personal tool · v1.3</span>
-        <h3 class="project-title">Collaba Projects</h3>
+        <h3 class="project-title"><a href="https://github.com/maksym-lysogora/collaba-projects" target="_blank">Collaba Projects</a></h3>
         <p class="project-desc">
           Windows desktop time tracker and weekly planner I built for my own studio workflow. A project timer, a strip on the taskbar and a drag-and-drop planner replace separate spreadsheets and timers. Built with AI-assisted development; the UX and visual identity are my own design.
         </p>
@@ -1032,56 +1037,26 @@
           <p><strong>Project:</strong> small internal tool for planning and tracking time across studio projects.</p>
           <p><strong>Role:</strong> product concept, UX and visual identity, feature direction, testing and iteration with an AI coding assistant.</p>
           <p><strong>What it does:</strong> start/pause/stop timer from a taskbar strip, weekly and monthly planner with drag-and-drop project blocks, per-project time reports, light and dark themes.</p>
-          <p><strong>Reliability:</strong> data stays on the local disk with daily backup copies and an error log; a failed write never stops later saves.</p>
+          <p><strong>Architecture:</strong> I kept the whole planner in one HTML file, so every change is tested in a browser first and the desktop app reuses the same file. A thin Electron shell adds only what a browser can't do.</p>
+          <p><strong>Reliability:</strong> the planner window writes the data file itself on every change, the main process keeps a second copy and a daily backup for 30 days, and a failed write is logged and retried.</p>
           <div class="project-image-gallery">
             <figure>
               <img src="media/project_4_collaba_projects/01-planner.jpg" alt="Collaba Projects weekly planner, light theme">
               <figcaption>Weekly planner with colour-coded project blocks and the timer bar. Screenshot uses demo data.</figcaption>
             </figure>
             <figure>
-              <img src="media/project_4_collaba_projects/02-planner-dark.jpg" alt="Collaba Projects weekly planner, dark theme">
-              <figcaption>The same planner in the dark theme.</figcaption>
+              <img src="media/project_4_collaba_projects/02-time-report.jpg" alt="Collaba Projects time report">
+              <figcaption>Time report: totals per project, hours per day and the list of time entries. Demo data.</figcaption>
+            </figure>
+            <figure>
+              <img src="media/project_4_collaba_projects/03-architecture.svg" alt="Collaba Projects architecture diagram" style="background:#F1EADB">
+              <figcaption>How it is built: one planner page that runs in a browser or inside an Electron shell; the shell adds the data file, taskbar strip, tray and hotkeys, with two independent copies of every save.</figcaption>
             </figure>
           </div>
         </div>
       </div>
 
       <!-- Project 5 -->
-      <div class="project-card fade-in">
-        <div class="project-top">
-          <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-        </div>
-        <span class="project-badge">Studio website</span>
-        <h3 class="project-title">Collaba Architects Website</h3>
-        <p class="project-desc">
-          Website for the relaunched architecture studio Collaba Architects: a quiet, image-led portfolio in English and Ukrainian. I chose the references and layout direction, compared four templates, and built the chosen one with a coding assistant.
-        </p>
-        <ul class="tech-list">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>Bilingual EN/UA</li>
-          <li>AI-directed development</li>
-        </ul>
-        <div class="project-extended">
-          <p><strong>Project:</strong> three-page site (Projects, Studio, Contact) with project galleries and a full-screen project viewer.</p>
-          <p><strong>Role:</strong> reference research, art direction, content structure, selection of project imagery, QA. Built with Claude Code.</p>
-          <p><strong>Process:</strong> collected ten reference sites, narrowed to three, produced four template directions (Quiet, Grid, Gallery, Visual Dark), then filled the chosen template with six projects.</p>
-          <p><strong>Status:</strong> ready locally; not yet published.</p>
-          <div class="project-image-gallery">
-            <figure>
-              <img src="media/project_5_collaba_architects/01-home.jpg" alt="Collaba Architects home page">
-              <figcaption>Home page: full-bleed project image with the studio line.</figcaption>
-            </figure>
-            <figure>
-              <img src="media/project_5_collaba_architects/02-studio.jpg" alt="Collaba Architects studio page">
-              <figcaption>Studio page.</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 6 -->
       <div class="project-card fade-in">
         <div class="project-top">
           <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
@@ -1150,7 +1125,7 @@
             <li>Owned business operations, hiring, client relations, and project delivery</li>
             <li>Led large-scale urban planning and residential projects for clients in Ukraine and abroad</li>
             <li>Developed internal digital standards and automated documentation processes across concurrent projects</li>
-            <li>Relaunched the studio in 2026 with a new website; 90+ projects in 3 countries, together with co-founder Oleksandr Nochovnyi</li>
+            <li>Studio portfolio: 90+ projects in 3 countries, together with co-founder Oleksandr Nochovnyi; studio relaunched in 2026</li>
           </ul>
         </div>
       </div>
